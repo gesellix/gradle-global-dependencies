@@ -19,6 +19,19 @@ dependencies {
   testCompile 'org.spockframework:spock-core:0.7-groovy-1.8'
 }
 
+// remove dependencies of gradle core/plugins
+sourceSets {
+  main {
+    compileClasspath = compileClasspath.filter {
+      !it.name.contains("snakeyaml-1.6")
+    }
+  }
+}
+// remove dependencies of gradle core/plugins
+test.doFirst {
+  classpath = classpath.filter { !it.name.contains("snakeyaml-1.6") }
+}
+
 configurations.all {
   resolutionStrategy {
     failOnVersionConflict()
