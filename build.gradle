@@ -48,6 +48,6 @@ configurations.all {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '1.12-rc-2'
-  distributionUrl = 'http://services.gradle.org/distributions/gradle-1.12-rc-2-all.zip'
+  gradleVersion = '1.12'
+  distributionUrl = 'http://services.gradle.org/distributions/gradle-1.12-all.zip'
 }
